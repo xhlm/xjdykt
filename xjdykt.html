@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0164)file:///F:/%E6%9D%82%E4%B9%B1/%E6%AC%A0%E5%80%BA%E8%BF%98%E9%92%B1/%E8%99%9A%E5%81%87%E7%9A%84%E4%B8%80%E5%8D%A1%E9%80%9A/%E6%A0%A1%E5%9B%ADe%E5%8D%A1%E9%80%9A.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
+    <title>校园e卡通</title>
+    <!-- <link rel="stylesheet" href="./debt2yxy.css" type="text/css"> --></head>
+  
+  <body onclick="switchP()" style="
+    margin: 0;
+">
+    <div id="outer" style="
+    width: 100%;
+    ">
+      <img src="./pic/1.png" style="
+      width: 100%;
+      ">
+    </div>
+	<div id="inner" style="
+    width: 100%; " hidden="">
+      <img src="./pic/2.png" style="
+      width: 100%;
+      position: fixed;
+      ">
+	  <div style="margin-left: 88vw; margin-top: 88vw; position: absolute;"><div id="verh">2021-05-10 15:49:46</div></div>
+    </div>
+    <script>
+		var IsOuter=true;	
+		setInterval(function(){
+			gEid("verh").innerHTML = new Date().Format("yyyy-MM-dd hh:mm:ss");
+		}, 1000);
+		function get_T_s(){
+			//"2019-12-15 17:00:00"
+			
+			return T("year")+"-"+T("month")+"-"+T("day")+" "+T("hour")+":"+T("minute")+T("second")
+		}
+		Date.prototype.Format = function (fmt) { // author: meizz
+		  var o = {
+			"M+": this.getMonth() + 1, // 月份
+			"d+": this.getDate(), // 日
+			"h+": this.getHours(), // 小时
+			"m+": this.getMinutes(), // 分
+			"s+": this.getSeconds(), // 秒
+			"q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+			"S": this.getMilliseconds() // 毫秒
+		  };
+		  if (/(y+)/.test(fmt))
+			fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+		  for (var k in o)
+			if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+			  return fmt;
+		}
+		function switchP(){
+			gEid("outer").hidden = IsOuter;
+			gEid("inner").hidden = !IsOuter;
+			IsOuter = !IsOuter;
+		}
+		function gEid(id){
+			return document.getElementById(id);
+		}
+		function gEcls(cls){
+			return document.getElementsByClassName(cls);
+		}
+	</script>
+	<style type="text/css"> 
+		#verh {
+			position: relative;
+			/* transform: rotateZ(90deg); */
+			-ms-transform:rotate(90deg); /* Internet Explorer 9*/
+			-moz-transform:rotate(90deg); /* Firefox */
+			/* -webkit-transform:rotate(90deg); */ /* Safari 和 Chrome */
+			-o-transform:rotate(90deg); /* Opera */
+			font-size: 3.7vw;
+			color: #e71817;
+			width: max-content;
+			writing-mode: vertical-lr;
+		}
+	</style> 
+
+</body></html>
